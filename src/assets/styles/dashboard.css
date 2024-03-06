@@ -1,0 +1,27 @@
+.dashboard {
+  overflow-y: auto;
+}
+
+.dashboard div:first-child {
+  display: grid;
+  align-items: center;
+  height: var(--big-white-space);
+  box-sizing: border-box;
+}
+
+.list-social-media {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: var(--padding-card-size);
+}
+
+.list-social-media li {
+  background: var(--secondary-color);
+  padding: var(--padding-card-size);
+  height: 25rem;
+  border-radius: 1.5rem;
+}
+
+.list-social-media h4 {
+  margin-bottom: var(--padding-card-size);
+}

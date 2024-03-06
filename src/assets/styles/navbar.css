@@ -1,0 +1,35 @@
+.side-bar-nav {
+  position: sticky;
+  display: grid;
+  height: 100svh;
+  top: 0;
+  bottom: 0;
+  grid-template-rows: auto auto 1fr;
+  padding: 0 var(--padding-size);
+  border-right: 0.1rem solid var(--border-color);
+  width: auto;
+  overflow: hidden;
+}
+
+.side-bar-nav div {
+  display: grid;
+  align-items: center;
+  height: var(--big-white-space);
+  padding: 0;
+}
+
+.side-bar-nav .nav-title {
+  padding: 0 var(--padding-size);
+}
+
+.side-bar-nav nav {
+  height: 100%;
+}
+
+.side-bar-nav a {
+  padding: var(--padding-size);
+}
+
+.side-bar-nav div:last-child {
+  align-self: end;
+}
