@@ -5,7 +5,7 @@
   top: 0;
   bottom: 0;
   grid-template-rows: auto auto 1fr;
-  padding: 0 var(--padding-size);
+  padding: 0 var(--size-3);
   border-right: 0.1rem solid var(--border-color);
   width: auto;
   overflow: hidden;
@@ -14,12 +14,12 @@
 .side-bar-nav div {
   display: grid;
   align-items: center;
-  height: var(--big-white-space);
+  height: var(--size-1);
   padding: 0;
 }
 
 .side-bar-nav .nav-title {
-  padding: 0 var(--padding-size);
+  padding: 0 var(--size-4);
 }
 
 .side-bar-nav nav {
@@ -27,7 +27,7 @@
 }
 
 .side-bar-nav a {
-  padding: var(--padding-size);
+  padding: var(--size-4);
 }
 
 .side-bar-nav div:last-child {

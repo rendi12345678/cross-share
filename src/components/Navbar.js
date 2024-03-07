@@ -14,16 +14,16 @@ function Navbar() {
             <Link to="/">Dashboard</Link>
           </li>
           <li>
-            <Link to="/">Analytics</Link>
+            <Link to="/">Facebook</Link>
           </li>
           <li>
-            <Link to="/">Contacts</Link>
+            <Link to="/">Instagram</Link>
           </li>
           <li>
-            <Link to="/">Mail</Link>
+            <Link to="/">Linkedin</Link>
           </li>
           <li>
-            <Link to="/">Calendar</Link>
+            <Link to="/">Youtube</Link>
           </li>
           <li>
             <Link to="/">Settings</Link>

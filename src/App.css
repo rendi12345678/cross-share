@@ -139,7 +139,7 @@ table {
   font-size: 62.5%;
   --h1: clamp(3rem, 3.2vw, 3.2rem);
   --column-gap: clamp(2rem, 4.2vw, 4.2rem);
-  --big-padding: clamp(3rem, 4vw, 4rem);
+  --size-2: clamp(3rem, 4vw, 4rem);
   --h2: clamp(2.4rem, 3.2vw, 3rem);
   --accent-color: #085ee7;
   --secondary-color: #f5f5f5;
@@ -152,23 +152,23 @@ table {
   --body-color: #444;
   --input-color: #fff;
   --hover-color: rgba(0, 0, 0, 0.15);
-  --border-color: rgba(0, 0, 0, 0.25);
+  --border-color: rgba(0, 0, 0, 0.15);
   --white-space: clamp(2rem, 4.2vw, 4.2rem);
   --h3: clamp(2.2rem, 2.4vw, 2.4rem);
   --h4: clamp(1.6rem, 2vw, 2rem);
   --body-text: clamp(1.4rem, 1.6vw, 1.6rem);
   --max-width: 96rem;
-  --big-white-space: 12rem;
-  --border-radius: 1.2rem;
-  --padding-card-size: clamp(1.5rem, 2vw, 2rem);
-  --padding-size: clamp(1rem, 1.3vw, 1.3rem);
+  --size-1: 12rem;
+  --border-radius: 2.4rem;
+  --size-3: clamp(1.5rem, 2.5vw, 2.5rem);
+  --size-4: clamp(1rem, 1.3vw, 1.3rem);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --date-picker-color: invert(70%);
     --hover-color: rgba(255, 255, 255, 0.15);
-    --border-color: rgba(255, 255, 255, 0.25);
+    --border-color: rgba(255, 255, 255, 0.15);
     --contrast-color: #fff;
     --headings-color: #f0f0f0;
     --body-color: #bebebe;
@@ -193,7 +193,7 @@ main {
   width: 100%;
   min-height: 100svh;
   box-sizing: border-box;
-  padding: var(--big-padding);
+  padding: var(--size-3);
   padding-top: 0;
 }
 
@@ -203,12 +203,17 @@ a,
 label,
 input,
 textarea,
-figcaption {
+figcaption,
+table,
+th,
+tr,
+td {
   font-family: "Source Sans 3", sans-serif;
   font-size: var(--body-text);
   line-height: 1.5;
   color: var(--body-color);
   font-weight: 400;
+  text-align: left;
 }
 
 /* Headings */
@@ -220,6 +225,7 @@ h4 {
   font-weight: 700;
   line-height: 1.1;
   box-sizing: border-box;
+  text-align: left;
 }
 
 h2,
@@ -275,14 +281,13 @@ a:hover {
 
 button {
   border: 0;
-  font-weight: 800;
-  background: var(--accent-color);
+  font-weight: 600;
   color: var(--button-color);
-  padding: 0.7rem 2rem;
+  padding: 0.5rem 1.2rem;
   border-radius: var(--border-radius);
-  margin-top: var(--title-space);
   width: fit-content;
-  transition: background-color 300ms;
+  cursor: pointer;
+  transition: 300ms;
 }
 
 button:hover {
@@ -290,7 +295,7 @@ button:hover {
 }
 
 button:active {
-  transform: scale(0.93);
+  transform: scale(0.95);
 }
 
 /* Miscellaneous */
