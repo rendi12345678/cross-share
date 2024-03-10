@@ -39,7 +39,6 @@
 }
 
 .dashboard header {
-  margin-top: var(--size-2);
   display: flex;
   width: 100%;
   justify-content: space-between;

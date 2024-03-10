@@ -14,16 +14,10 @@ function Navbar() {
             <Link to="/">Dashboard</Link>
           </li>
           <li>
-            <Link to="/">Facebook</Link>
-          </li>
-          <li>
-            <Link to="/">Instagram</Link>
-          </li>
-          <li>
-            <Link to="/">Linkedin</Link>
-          </li>
-          <li>
             <Link to="/">Youtube</Link>
+          </li>
+          <li>
+            <Link to="/">X / Twitter</Link>
           </li>
           <li>
             <Link to="/">Settings</Link>
