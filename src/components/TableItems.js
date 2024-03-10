@@ -13,7 +13,11 @@ function TableItems() {
     },
     {
       media: "/logo192.png",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, similique! !!",
+      text: "Lorepm ipsum dolor sit amet consectetur adipisicing elit. Ea, similique! !!",
+    },
+    {
+      media: "/logo192.png",
+      text: "I do love React Js !!",
     },
   ];
 

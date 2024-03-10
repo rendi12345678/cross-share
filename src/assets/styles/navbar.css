@@ -11,6 +11,11 @@
   overflow: hidden;
 }
 
+.something {
+  display: grid;
+  justify-content: baseline;
+}
+
 .side-bar-nav div {
   display: grid;
   align-items: center;

@@ -4,7 +4,6 @@ import Item from "./ui/Item";
 
 function ListSocialMedia() {
   const { items } = useListSocialMedia();
-
   return (
     <ul className="list-social-media">
       {items.map(({ platform, reactions, comments, shared }, index) => (
