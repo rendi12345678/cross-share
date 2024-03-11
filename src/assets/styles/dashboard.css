@@ -2,7 +2,7 @@
   /* overflow-y: auto; */
 }
 
-.dashboard div:first-child {
+.dashboard .top {
   display: grid;
   align-items: center;
   height: var(--size-1);
@@ -46,6 +46,20 @@
   padding: var(--size-4) var(--size-3);
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   padding-top: var(--size-3);
+}
+
+.dashboard header select {
+  background: var(--contrast-color);
+  color: var(--primary-color);
+  border: none;
+  font-size: var(--body-text);
+  padding: var(--size-5);
+  cursor: pointer;
+}
+
+.dashboard header select option {
+  color: var(--primary-color);
+  cursor: pointer;
 }
 
 tr,

@@ -162,6 +162,7 @@ table {
   --border-radius: 2.4rem;
   --size-3: clamp(1.5rem, 2.5vw, 2.5rem);
   --size-4: clamp(1rem, 1.3vw, 1.3rem);
+  --size-5: clamp(0.2rem, 0.3vw, 0.3rem);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -257,6 +258,9 @@ textarea {
   background: var(--input-color);
   outline: none;
   border: 0.1rem solid var(--contrast-color);
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.5rem;
 }
 
 input::placeholder,
@@ -291,7 +295,7 @@ button {
 }
 
 button:hover {
-  filter: brightness(85%);
+  filter: brightness(90%);
 }
 
 button:active {

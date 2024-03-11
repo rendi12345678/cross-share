@@ -1,15 +1,12 @@
 import React from "react";
+import CreateNewPostHeader from "./CreateNewPostHeader";
 import TableItems from "./TableItems";
-import Button from "./ui/Button";
 import TableHead from "./ui/TableHead";
 
 function PostTable() {
   return (
     <>
-      <header>
-        <h3>Posts</h3>
-        <Button bgColor="var(--accent-color)">Create New Post</Button>
-      </header>
+      <CreateNewPostHeader />
       <table>
         <TableHead />
         <TableItems />

@@ -1,0 +1,36 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  width: 50rem;
+  height: 55rem;
+  background: var(--secondary-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: var(--size-2);
+  z-index: 100;
+}
+
+.create-new-post-modal {
+  display: grid;
+  align-content: start;
+}
+
+.create-new-post-modal h1 {
+  text-align: center;
+}
+
+.create-new-post-modal form {
+  display: grid;
+  row-gap: var(--size-5);
+  margin-top: var(--size-2);
+}

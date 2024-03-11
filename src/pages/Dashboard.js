@@ -5,7 +5,7 @@ import PostTable from "../components/PostTable";
 function Dashboard() {
   return (
     <section className="dashboard">
-      <div>
+      <div className="top">
         <h1>Dashboard</h1>
       </div>
       <PostTable />
