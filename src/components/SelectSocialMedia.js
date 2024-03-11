@@ -7,7 +7,7 @@ function SelectSocialMedia() {
 
   return (
     <h3>
-      Posts &nbsp;{" "}
+      Posts
       <Select onChange={handleOnChange}>
         <Select.Option key="1">Youtube</Select.Option>
         <Select.Option key="2">X / Twitter</Select.Option>

@@ -11,26 +11,63 @@
 }
 
 .modal-container {
-  width: 50rem;
-  height: 55rem;
   background: var(--secondary-color);
   border-radius: var(--border-radius);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   padding: var(--size-2);
   z-index: 100;
+  box-sizing: border-box;
 }
 
 .create-new-post-modal {
-  display: grid;
-  align-content: start;
+  display: flex;
+  flex-direction: column;
+  width: 60rem;
+  box-sizing: border-box;
 }
 
 .create-new-post-modal h1 {
-  text-align: center;
+  text-align: left;
+}
+
+.create-new-post-modal .date-and-access-token {
+  display: flex;
+  gap: var(--size-4);
+}
+
+.create-new-post-modal .video-and-description {
+  display: flex;
+  gap: var(--size-4);
+}
+
+.create-new-post-modal .video-and-description label {
+  box-sizing: border-box;
+}
+
+.create-new-post-modal .cancel-and-upload {
+  display: flex;
+  gap: var(--size-4);
+}
+
+.cancel-and-upload button:first-child {
+  background: var(--primary-color);
+}
+
+.cancel-and-upload button:last-child {
+  background: var(--accent-color);
+}
+
+.video-and-description input,
+.video-and-description textarea {
+  height: 13rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .create-new-post-modal form {
-  display: grid;
-  row-gap: var(--size-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4);
   margin-top: var(--size-2);
+  height: auto;
 }

@@ -1,9 +1,9 @@
 import React from "react";
 
-function Select({ children, onChange }) {
+function Select({ children, onChange, label }) {
   return (
-    <label htmlFor="">
-      Choose Platform : &nbsp;
+    <label>
+      {label} : &nbsp;
       <select onChange={onChange}>{children}</select>
     </label>
   );
