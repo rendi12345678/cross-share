@@ -1,14 +1,14 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-function TextArea({ name, label }) {
+const TextArea = forwardRef(({ name, label }, ref) => {
   return (
     <>
       <label htmlFor={name} className={name}>
         {label} <br />
-        <textarea id={name} name={name}></textarea>
+        <textarea id={name} name={name} ref={ref}></textarea>
       </label>
     </>
   );
-}
+});
 
 export default TextArea;
