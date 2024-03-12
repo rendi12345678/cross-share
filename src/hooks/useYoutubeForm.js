@@ -1,5 +1,7 @@
+import { useState } from "react";
 import useAxios from "./useAxios";
 import useContextHook from "./useContextHook";
+import useCreateNewPost from "./useCreateNewPost";
 
 function useYoutubeForm() {
   const {
@@ -9,7 +11,10 @@ function useYoutubeForm() {
     youtubeVideoRef,
     uploadScheduleRef,
   } = useContextHook();
+  const { closeModal } = useCreateNewPost();
   const { postData } = useAxios();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const handleYoutubeFormSubmit = async (e) => {
     e.preventDefault();
@@ -22,14 +27,21 @@ function useYoutubeForm() {
     formData.append("youtubeVideo", youtubeVideoRef?.current.files[0]);
 
     try {
+      setIsLoading(true);
       const data = await postData(url, formData);
-      console.log(`Data : ${data}`);
+      if (!data.success) return setIsError(true);
+      console.log(`Message : ${data.message}`);
+      closeModal();
+      setIsError(false);
     } catch (err) {
+      setIsError(true);
       console.log(`Error post data to server : ${err}`);
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  return { handleYoutubeFormSubmit };
+  return { handleYoutubeFormSubmit, isLoading };
 }
 
 export default useYoutubeForm;

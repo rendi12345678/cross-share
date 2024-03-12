@@ -20,6 +20,7 @@ function App() {
   const accessTokenRef = useRef(null);
   const youtubeVideoRef = useRef(null);
   const uploadScheduleRef = useRef(null);
+  const modalRef = useRef(null);
 
   const contextValue = {
     titleRef,
@@ -27,6 +28,7 @@ function App() {
     accessTokenRef,
     youtubeVideoRef,
     uploadScheduleRef,
+    modalRef,
   };
 
   return (

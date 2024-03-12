@@ -1,12 +1,20 @@
+import VideoAndDescription from "../components/VideoAndDescription";
 import Input from "../components/ui/Input";
-import TextArea from "../components/ui/TextArea";
 import useContextHook from "./useContextHook";
 
 function useCreateNewPost() {
-  const { titleRef, descriptionRef, youtubeVideoRef } = useContextHook();
+  const { titleRef, modalRef } = useContextHook();
 
-  const handleCreateNewPost = () => {
-    console.log("Create new post");
+  const closeModal = () => {
+    setDisplayElement(modalRef.current, "none");
+  };
+
+  const openModal = () => {
+    setDisplayElement(modalRef.current, "flex");
+  };
+
+  const setDisplayElement = (element, value) => {
+    element.style.display = value;
   };
 
   const renderInputFields = (platform) => {
@@ -14,26 +22,13 @@ function useCreateNewPost() {
       return (
         <>
           <Input type="text" name="title" label="Title" ref={titleRef} />
-          <div className="video-and-description">
-            <Input
-              type="file"
-              name="video"
-              label="Choose Video"
-              ref={youtubeVideoRef}
-              accept="video/*"
-            />
-            <TextArea
-              name="description"
-              label="description"
-              ref={descriptionRef}
-            />
-          </div>
+          <VideoAndDescription />
         </>
       );
     return <Input type="text" name="title" label="Title" ref={titleRef} />;
   };
 
-  return { handleCreateNewPost, renderInputFields };
+  return { renderInputFields, closeModal, openModal };
 }
 
 export default useCreateNewPost;
