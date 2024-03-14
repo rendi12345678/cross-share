@@ -1,13 +1,14 @@
 import React from "react";
+import useButtons from "../hooks/useButtons";
 import useCreateNewPost from "../hooks/useCreateNewPost";
 import useSelectSocialMedia from "../hooks/useSelectSocialMedia";
 import useYoutubeForm from "../hooks/useYoutubeForm";
 import CreateNewPostModal from "./CreateNewPostModal";
 import SelectSocialMedia from "./SelectSocialMedia";
-import Button from "./ui/Button";
 
 function CreateNewPostHeader() {
   const { openModal, renderInputFields, closeModal } = useCreateNewPost();
+  const { PrimaryButton } = useButtons();
   const { handleOnChange, platform } = useSelectSocialMedia();
   const { handleYoutubeFormSubmit, isLoading } = useYoutubeForm();
 
@@ -15,9 +16,7 @@ function CreateNewPostHeader() {
     <header>
       {isLoading ? <span className="loader"></span> : null}
       <SelectSocialMedia />
-      <Button bgColor="var(--accent-color)" onClick={openModal}>
-        Create New Post
-      </Button>
+      <PrimaryButton onClick={openModal} text="Create New Post" />
       <CreateNewPostModal
         renderInputFields={renderInputFields}
         handleOnChange={handleOnChange}

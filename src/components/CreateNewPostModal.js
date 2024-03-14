@@ -11,6 +11,7 @@ function CreateNewPostModal({
   renderInputFields,
   platform,
   closeModal,
+  isOpenModal,
 }) {
   return (
     <Modal className="create-new-post-modal">

@@ -1,15 +1,13 @@
 import React from "react";
-import Button from "./ui/Button";
+import useButtons from "../hooks/useButtons";
 
 function CancelAndUpload({ closeModal }) {
+  const { PrimaryButton, CancelButton } = useButtons();
+
   return (
     <div className="cancel-and-upload">
-      <Button bgColor="var(--primary-color)" type="button" onClick={closeModal}>
-        Cancel
-      </Button>
-      <Button bgColor="var(--accent-color)" type="submit">
-        Upload
-      </Button>
+      <CancelButton text="Cancel" onClick={closeModal} />
+      <PrimaryButton text="Upload" />
     </div>
   );
 }

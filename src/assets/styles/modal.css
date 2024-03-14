@@ -6,8 +6,10 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.7);
   display: none;
+  opacity: 0;
   justify-content: center;
   align-items: center;
+  transition: 1000ms;
 }
 
 .modal-container {

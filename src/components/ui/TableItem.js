@@ -1,7 +1,8 @@
 import React from "react";
-import Button from "./Button";
+import useButtons from "../../hooks/useButtons";
 
-function TableItem({ no, media, text, status }) {
+function TableItem({ no, media, title, status }) {
+  const {EditButton, DeleteButton} = useButtons()
   const statusStyles =
     status === "Uploaded"
       ? {
@@ -18,13 +19,13 @@ function TableItem({ no, media, text, status }) {
         <td aria-label="Media">
           <img src={media} alt="media" />
         </td>
-        <td aria-label="Text">{text}</td>
+        <td aria-label="Title">{title}</td>
         <td aria-label="Status" style={statusStyles}>
           {status}
         </td>
         <td aria-label="Actions" className="actions">
-          <Button bgColor="orange">Update</Button>
-          <Button bgColor="red">Delete</Button>
+          <EditButton text="Update"/>
+          <DeleteButton text="Delete"/>
         </td>
       </tr>
     </tbody>

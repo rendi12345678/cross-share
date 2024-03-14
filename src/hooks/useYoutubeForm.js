@@ -18,6 +18,7 @@ function useYoutubeForm() {
 
   const handleYoutubeFormSubmit = async (e) => {
     e.preventDefault();
+    console.log(`render...`);
     const url = `http://localhost:5000/upload-youtube-video`;
     const formData = new FormData();
     formData.append("title", titleRef?.current.value);

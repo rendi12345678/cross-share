@@ -1,9 +1,9 @@
 import React from "react";
 
-function Button({ children, bgColor, onClick = null }) {
+function Button({ bgColor, text, onClick, ...props }) {
   return (
-    <button style={{ background: bgColor }} onClick={onClick}>
-      {children}
+    <button style={{ background: bgColor }} onClick={onClick} {...props}>
+      {text}
     </button>
   );
 }
