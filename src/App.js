@@ -1,35 +1,16 @@
-import { lazy, useRef } from "react";
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import { createContext } from "use-context-selector";
 import "./App.css";
-const Navbar = lazy(() => import("./components/Navbar"));
-const Dashboard = lazy(() => import("./pages/Dashboard"));
+import useAppContext from "./hooks/useAppContext";
+import useRoutes from "./hooks/useRoutes";
+const Navbar = lazy(() => import("./components/layouts/Navbar"));
 
 export const AppContext = createContext(null);
 
-const routes = [
-  {
-    path: "/",
-    element: <Dashboard />,
-  },
-];
-
 function App() {
-  const titleRef = useRef(null);
-  const descriptionRef = useRef(null);
-  const accessTokenRef = useRef(null);
-  const youtubeVideoRef = useRef(null);
-  const uploadScheduleRef = useRef(null);
-  const modalRef = useRef(null);
-
-  const contextValue = {
-    titleRef,
-    descriptionRef,
-    accessTokenRef,
-    youtubeVideoRef,
-    uploadScheduleRef,
-    modalRef,
-  };
+  const { contextValue } = useAppContext();
+  const routes = useRoutes();
 
   return (
     <AppContext.Provider value={contextValue}>

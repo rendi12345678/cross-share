@@ -1,7 +1,7 @@
 import React from "react";
+import TableHead from "../ui/TableHead";
 import CreateNewPostHeader from "./CreateNewPostHeader";
 import TableItems from "./TableItems";
-import TableHead from "./ui/TableHead";
 
 function PostTable() {
   return (

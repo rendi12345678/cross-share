@@ -1,6 +1,6 @@
 import React from "react";
-import Select from "../components/ui/Select";
-import useSelectSocialMedia from "../hooks/useSelectSocialMedia";
+import useSelectSocialMedia from "../../hooks/useSelectSocialMedia";
+import Select from "./Select";
 
 function SelectSocialMedia() {
   const { handleOnChange } = useSelectSocialMedia();

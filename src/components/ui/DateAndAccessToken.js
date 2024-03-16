@@ -1,6 +1,6 @@
 import React from "react";
-import useContextHook from "../hooks/useContextHook";
-import Input from "./ui/Input";
+import useContextHook from "../../hooks/useContextHook";
+import Input from "./Input";
 
 function DateAndAccessToken() {
   const { uploadScheduleRef, accessTokenRef } = useContextHook();

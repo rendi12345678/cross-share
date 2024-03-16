@@ -1,6 +1,6 @@
 import React from "react";
-import useListSocialMedia from "../hooks/useListSocialMedia";
-import Item from "./ui/Item";
+import useListSocialMedia from "../../hooks/useListSocialMedia";
+import Item from "./Item";
 
 function ListSocialMedia() {
   const { items } = useListSocialMedia();

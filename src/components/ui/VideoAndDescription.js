@@ -1,7 +1,7 @@
 import React from "react";
-import useContextHook from "../hooks/useContextHook";
-import Input from "./ui/Input";
-import TextArea from "./ui/TextArea";
+import useContextHook from "../../hooks/useContextHook";
+import Input from "./Input";
+import TextArea from "./TextArea";
 
 function VideoAndDescription() {
   const { youtubeVideoRef, descriptionRef } = useContextHook();

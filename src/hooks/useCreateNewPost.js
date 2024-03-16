@@ -1,5 +1,5 @@
-import VideoAndDescription from "../components/VideoAndDescription";
 import Input from "../components/ui/Input";
+import VideoAndDescription from "../components/ui/VideoAndDescription";
 import useContextHook from "./useContextHook";
 
 function useCreateNewPost() {

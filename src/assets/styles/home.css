@@ -1,8 +1,8 @@
-.dashboard {
+.home {
   /* overflow-y: auto; */
 }
 
-.dashboard .top {
+.home .top {
   display: grid;
   align-items: center;
   height: var(--size-1);
@@ -26,19 +26,19 @@
   margin-bottom: var(--size-3);
 }
 
-.dashboard table {
+.home table {
   background: var(--secondary-color);
   width: 100%;
   color: var(--body-color);
   border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
-.dashboard table img {
+.home table img {
   width: var(--size-2);
   height: var(--size-2);
 }
 
-.dashboard header {
+.home header {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -48,7 +48,7 @@
   padding-top: var(--size-3);
 }
 
-.dashboard header select {
+.home header select {
   background: var(--contrast-color);
   color: var(--primary-color);
   border: none;
@@ -57,7 +57,7 @@
   cursor: pointer;
 }
 
-.dashboard header select option {
+.home header select option {
   color: var(--primary-color);
   cursor: pointer;
 }

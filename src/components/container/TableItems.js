@@ -1,5 +1,5 @@
 import React from "react";
-import TableItem from "./ui/TableItem";
+import TableItem from "../ui/TableItem";
 
 function TableItems() {
   const tableItems = [
@@ -15,7 +15,8 @@ function TableItems() {
     },
     {
       media: "/logo192.png",
-      title: "Lorepm ipsum dolor sit amet consectetur adipisicing elit. Ea, similique! !!",
+      title:
+        "Lorepm ipsum dolor sit amet consectetur adipisicing elit. Ea, similique! !!",
       status: "Pending",
     },
     {

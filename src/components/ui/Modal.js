@@ -1,6 +1,6 @@
 import React from "react";
-import "../assets/styles/modal.css";
-import useContextHook from "../hooks/useContextHook";
+import "../../assets/styles/modal.css";
+import useContextHook from "../../hooks/useContextHook";
 
 function Modal({ children, className }) {
   const { modalRef } = useContextHook();

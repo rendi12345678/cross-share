@@ -1,5 +1,5 @@
 import React from "react";
-import useButtons from "../hooks/useButtons";
+import useButtons from "../../hooks/useButtons";
 
 function CancelAndUpload({ closeModal }) {
   const { PrimaryButton, CancelButton } = useButtons();

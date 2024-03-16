@@ -11,14 +11,11 @@
   overflow: hidden;
 }
 
-.something {
-  display: grid;
-  justify-content: baseline;
-}
-
 .side-bar-nav div {
   display: grid;
   align-items: center;
+  grid-template-columns: 1fr;
+  width: 100%;
   height: var(--size-1);
   padding: 0;
 }
@@ -31,10 +28,20 @@
   height: 100%;
 }
 
-.side-bar-nav a {
+.side-bar-nav ul li button {
   padding: var(--size-4);
+  display: block;
+  color: var(--body-color) !important;
+  border-radius: 1.5rem;
+  width: 100%;
+  margin-bottom: var(--size-4);
+  transition: 500ms;
 }
 
 .side-bar-nav div:last-child {
   align-self: end;
+}
+
+.side-bar-nav ul li button:hover {
+  background-color: var(--hover-color) !important;
 }

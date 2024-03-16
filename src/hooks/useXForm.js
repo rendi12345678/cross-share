@@ -1,6 +1,6 @@
 import useContextHook from "./useContextHook";
 
-function useYoutubeForm() {
+function useXForm() {
   const {
     titleRef,
     descriptionRef,
@@ -8,6 +8,7 @@ function useYoutubeForm() {
     youtubeVideoRef,
     uploadScheduleRef,
   } = useContextHook();
+  
   const refs = [
     {
       name: "title",
@@ -34,4 +35,4 @@ function useYoutubeForm() {
   return refs;
 }
 
-export default useYoutubeForm;
+export default useXForm;
