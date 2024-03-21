@@ -2,7 +2,7 @@ import React from "react";
 import useContextHook from "../../hooks/useContextHook";
 import Input from "./Input";
 
-function DateAndAccessToken() {
+function DateAndTime() {
   const { uploadScheduleRef, accessTokenRef } = useContextHook();
 
   return (
@@ -14,13 +14,13 @@ function DateAndAccessToken() {
         ref={uploadScheduleRef}
       />
       <Input
-        type="text"
-        name="access-token"
-        label="Access Token"
+        type="date-time"
+        name="time"
+        label="Time"
         ref={accessTokenRef}
       />
     </div>
   );
 }
 
-export default DateAndAccessToken;
+export default DateAndTime;

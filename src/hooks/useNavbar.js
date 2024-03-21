@@ -16,7 +16,7 @@ function useNavbar() {
       navListItem: "dashboard",
     },
     {
-      navListItem: "facebook",
+      navListItem: "youtube",
     },
     {
       navListItem: "x",

@@ -1,20 +1,32 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../assets/styles/home.css";
 import Dashboard from "../components/layouts/Dashboard";
+import Navbar from "../components/layouts/Navbar";
+import Youtube from "../components/layouts/Youtube";
 import useContextHook from "../hooks/useContextHook";
 
 function Home() {
-  const {activeLayout} = useContextHook()
+  const { activeLayout = "dashboard", setActiveLayout } = useContextHook();
+  const navigate = useNavigate();
 
   const renderLayout = () => {
-    if(activeLayout === "dashboard") return <Dashboard/>
-    return "404 Layout Nor Found!"
-  }
+    if (activeLayout === "logout") {
+      navigate("/sign-in");
+      setActiveLayout("dashboard");
+    }
+    if (activeLayout === "dashboard") return <Dashboard />;
+    if (activeLayout === "youtube") return <Youtube />;
+    return "404 Layout Nor Found!";
+  };
 
   return (
-    <section className="home">
-      {renderLayout()}
-    </section>
+    <>
+      <Navbar />
+      <main>
+        <section className="home">{renderLayout()}</section>
+      </main>
+    </>
   );
 }
 

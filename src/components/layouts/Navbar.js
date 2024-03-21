@@ -6,7 +6,7 @@ import NavList from "../ui/NavList";
 
 function Navbar() {
   const { renderNavListItems, isNavListItemActive, setActiveLayout } = useNavbar();
-  const logoutBgColor = isNavListItemActive("logout") ? "var(--hover-color)" : "transparent";
+  const getBgColor = (link) => isNavListItemActive(link) ? "var(--hover-color)" : "transparent";
 
   return (
     <aside className="side-bar-nav">
@@ -16,9 +16,9 @@ function Navbar() {
       <NavList>{renderNavListItems}</NavList>
       <div>
       <Button
-        text={"logout"}
+        text={"Log out"}
         className="nav-btn"
-        bgColor={logoutBgColor}
+        bgColor={getBgColor("logout")}
         onClick={() => setActiveLayout("logout")}
       />
       </div>

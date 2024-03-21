@@ -3,23 +3,15 @@ import VideoAndDescription from "../components/ui/VideoAndDescription";
 import useContextHook from "./useContextHook";
 
 function useCreateNewPost() {
-  const { titleRef, modalRef } = useContextHook();
+  const { titleRef, modalRef, isOpenModal, setIsOpenModal } = useContextHook();
   let timeout;
 
   const closeModal = () => {
-    setOpacityElement(modalRef.current, "0");
-    timeout = setTimeout(() => {
-      setDisplayElement(modalRef.current, "none");
-      clearTimeout(timeout);
-    }, 500);
+    setIsOpenModal({ createNewPost: false });
   };
 
-  const openModal = async () => {
-    setDisplayElement(modalRef.current, "flex");
-    timeout = setTimeout(() => {
-      setOpacityElement(modalRef.current, "1");
-      clearTimeout(timeout);
-    }, 100);
+  const openModal = () => {
+    setIsOpenModal({ createNewPost: true });
   };
 
   const setDisplayElement = (element, value) => {

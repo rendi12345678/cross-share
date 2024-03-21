@@ -8,14 +8,14 @@ function VideoAndDescription() {
 
   return (
     <div className="video-and-description">
+      <TextArea name="description" label="description" ref={descriptionRef} />
       <Input
         type="file"
         name="video"
-        label="Choose Video"
+        label=""
         ref={youtubeVideoRef}
         accept="video/*"
       />
-      <TextArea name="description" label="description" ref={descriptionRef} />
     </div>
   );
 }

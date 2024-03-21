@@ -1,29 +1,46 @@
-.home {
-  /* overflow-y: auto; */
-}
-
-.home .top {
+.list-social-media-posts {
   display: grid;
-  align-items: center;
-  height: var(--size-1);
-  box-sizing: border-box;
-}
-
-.list-social-media {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   gap: var(--size-3);
 }
 
-.list-social-media li {
+.list-social-media-posts li {
   background: var(--secondary-color);
-  padding: var(--size-3);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 2 / 1;
+  border: .15rem solid var(--border-color);
   border-radius: var(--border-radius);
 }
 
-.list-social-media h4 {
-  margin-bottom: var(--size-3);
+.list-social-media-posts li video {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  width: 100%;
+}
+
+.list-social-media-posts li .details {
+  padding: var(--size-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4);
+}
+
+.list-social-media-posts li .details div {
+  display: flex;
+  gap: var(--size-4);
+}
+
+.list-social-media-posts li .details .channel-profile {
+  display: flex;
+  gap: var(--size-4);
+  align-items: center;
+  border-top: .1rem solid var(--border-color);
+  border-bottom: .1rem solid var(--border-color);
+  padding: var(--size-4) 0;
+}
+
+.list-social-media-posts li .details img {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: cover;
 }
 
 .home table {

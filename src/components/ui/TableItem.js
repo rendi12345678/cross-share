@@ -1,8 +1,11 @@
 import React from "react";
 import useButtons from "../../hooks/useButtons";
+import useContextHook from "../../hooks/useContextHook";
 
 function TableItem({ no, media, title, status }) {
-  const {EditButton, DeleteButton} = useButtons()
+  const { EditButton, DeleteButton } = useButtons();
+  const { setIsOpenModal } = useContextHook();
+
   const statusStyles =
     status === "Uploaded"
       ? {
@@ -24,12 +27,18 @@ function TableItem({ no, media, title, status }) {
           {status}
         </td>
         <td aria-label="Actions" className="actions">
-          <EditButton text="Update"/>
-          <DeleteButton text="Delete"/>
+          <EditButton
+            text="Update"
+            onClick={() => setIsOpenModal({ updatePost: true })}
+          />
+          <DeleteButton
+            text="Delete"
+            onClick={() => setIsOpenModal({ deletePost: true })}
+          />
         </td>
       </tr>
     </tbody>
-  );
+  )
 }
 
 export default TableItem;

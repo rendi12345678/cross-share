@@ -1,14 +1,14 @@
 import React from "react";
 import PostTable from "../container/PostTable";
-import Top from "../ui/Top";
+import LayoutTitle from "../ui/LayoutTitle";
 
 function Dashboard() {
   return (
     <>
-      <Top title="Dashboard" />
+      <LayoutTitle title="Dashboard" />
       <PostTable />
     </>
-  );
+  )
 }
 
 export default Dashboard;

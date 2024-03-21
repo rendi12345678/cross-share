@@ -1,4 +1,29 @@
-import { useRef, useState } from "react";
+import { useReducer, useRef } from "react";
+import useLocalStorage from "./useLocalStorage";
+
+const initialState = {
+  isOpenModal: {
+    createNewPost: false,
+    deletePost: false,
+    updatePost: false,
+  },
+};
+
+const actionTypes = {
+  SET_IS_OPEN_MODAL: "SET_IS_OPEN_MODAL",
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case actionTypes.SET_IS_OPEN_MODAL:
+      return {
+        ...state,
+        isOpenModal: { ...state.isOpenModal, ...action.payload },
+      };
+    default:
+      return state;
+  }
+};
 
 function useAppContext() {
   const titleRef = useRef(null);
@@ -7,8 +32,15 @@ function useAppContext() {
   const youtubeVideoRef = useRef(null);
   const uploadScheduleRef = useRef(null);
   const modalRef = useRef(null);
-  const [activeLayout, setActiveLayout] = useState("dashboard");
   let url = "http://localhost:5000";
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const [activeLayout, setActiveLayout] = useLocalStorage("activeLayout", "dashboard")
+
+  const { isOpenModal } = state;
+
+  const setIsOpenModal = (value) => {
+    dispatch({ type: actionTypes.SET_IS_OPEN_MODAL, payload: value });
+  };
 
   const contextValue = {
     titleRef,
@@ -20,9 +52,11 @@ function useAppContext() {
     activeLayout,
     setActiveLayout,
     url,
+    setIsOpenModal,
+    isOpenModal,
   };
 
-  return {contextValue};
+  return { contextValue };
 }
 
 export default useAppContext;
