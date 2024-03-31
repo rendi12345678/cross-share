@@ -4,25 +4,29 @@ import "../assets/styles/user-authentication.css";
 import Button from "../components/ui/Button";
 import Form from "../components/ui/Form";
 import Input from "../components/ui/Input";
-import Line from "../components/ui/Line";
 import useButtons from "../hooks/useButtons";
+import Line from "./../components/ui/Line";
 
 function SignUp() {
   const { PrimaryButton } = useButtons();
 
-  const signUp = () => {}
+  const signUp = () => {};
 
   return (
     <div className="authentication-container">
       <div className="wrapper">
         <h1>Sign Up</h1>
         <Form>
-          <Input label="Name" type="text" placeholder="Enter your name"/>
-          <Input label="Email" type="email" placeholder="Enter your email"/>
-          <Input label="Password" type="password" placeholder="Enter your password"/>
+          <Input label="Name" type="text" placeholder="Enter your name" />
+          <Input label="Email" type="email" placeholder="Enter your email" />
+          <Input
+            label="Password"
+            type="password"
+            placeholder="Enter your password"
+          />
           <PrimaryButton text="Sign up with Cross Share" size="medium-btn" />
         </Form>
-        <Line/>
+        <Line />
         <Button
           onClick={() => signUp()}
           bgColor="white"

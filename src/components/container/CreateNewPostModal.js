@@ -1,17 +1,18 @@
 import React from "react";
 import useContextHook from "../../hooks/useContextHook";
 import useCreateNewPost from "../../hooks/useCreateNewPost";
-import useSelectSocialMedia from "../../hooks/useSelectSocialMedia";
-import CancelAndUpload from "../ui/CancelAndUpload";
-import ChoosePlatform from "../ui/ChoosePlatform";
-import DateAndTime from "../ui/DateAndTime";
-import Form from "../ui/Form";
-import Modal from "../ui/Modal";
+import Input from "../ui/Input";
+import useForm from "./../../hooks/useForm";
+import CancelAndUpload from "./../ui/CancelAndUpload";
+import DateAndTime from "./../ui/DateAndTime";
+import Form from "./../ui/Form";
+import Modal from "./../ui/Modal";
+import VideoAndDescription from "./../ui/VideoAndDescription";
 
 const CreateNewPostModal = () => {
-  const { renderInputFields, closeModal } = useCreateNewPost();
-  const { handleOnChange, platform, handleSubmitForm } = useSelectSocialMedia();
-  const { isOpenModal } = useContextHook();
+  const { closeModal } = useCreateNewPost();
+  const { handleSubmitForm } = useForm();
+  const { isOpenModal, titleRef } = useContextHook();
 
   return (
     <>
@@ -19,9 +20,9 @@ const CreateNewPostModal = () => {
         <Modal className="create-new-post-modal">
           <h1>Create New Post</h1>
           <Form onSubmit={handleSubmitForm}>
-            <ChoosePlatform handleOnChange={handleOnChange} />
             <DateAndTime />
-            {renderInputFields(platform)}
+            <Input type="text" name="title" label="Title" ref={titleRef} />
+            <VideoAndDescription />
             <CancelAndUpload closeModal={closeModal} />
           </Form>
         </Modal>

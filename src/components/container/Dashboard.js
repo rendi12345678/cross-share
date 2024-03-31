@@ -1,6 +1,6 @@
 import React from "react";
-import PostTable from "../container/PostTable";
 import LayoutTitle from "../ui/LayoutTitle";
+import PostTable from "./PostTable";
 
 function Dashboard() {
   return (
@@ -8,7 +8,7 @@ function Dashboard() {
       <LayoutTitle title="Dashboard" />
       <PostTable />
     </>
-  )
+  );
 }
 
 export default Dashboard;

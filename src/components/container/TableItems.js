@@ -1,5 +1,5 @@
 import React from "react";
-import TableItem from "../ui/TableItem";
+import TableItem from "./../ui/TableItem";
 
 function TableItems() {
   const tableItems = [

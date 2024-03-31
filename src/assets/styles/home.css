@@ -2,12 +2,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   gap: var(--size-3);
+  align-content: stretch;
 }
 
 .list-social-media-posts li {
   background: var(--secondary-color);
-  aspect-ratio: 2 / 1;
-  border: .15rem solid var(--border-color);
+  border: 0.15rem solid var(--border-color);
   border-radius: var(--border-radius);
 }
 
@@ -20,21 +20,21 @@
   padding: var(--size-3);
   display: flex;
   flex-direction: column;
-  gap: var(--size-4);
+  gap: var(--size-3);
 }
 
 .list-social-media-posts li .details div {
   display: flex;
-  gap: var(--size-4);
+  gap: var(--size-3);
 }
 
 .list-social-media-posts li .details .channel-profile {
   display: flex;
-  gap: var(--size-4);
+  gap: var(--size-3);
   align-items: center;
-  border-top: .1rem solid var(--border-color);
-  border-bottom: .1rem solid var(--border-color);
-  padding: var(--size-4) 0;
+  border-top: 0.1rem solid var(--border-color);
+  border-bottom: 0.1rem solid var(--border-color);
+  padding: var(--size-3) 0;
 }
 
 .list-social-media-posts li .details img {
@@ -60,7 +60,7 @@
   width: 100%;
   justify-content: space-between;
   background: var(--secondary-color);
-  padding: var(--size-4) var(--size-3);
+  padding: var(--size-3) var(--size-3);
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   padding-top: var(--size-3);
 }
@@ -70,7 +70,7 @@
   color: var(--primary-color);
   border: none;
   font-size: var(--body-text);
-  padding: var(--size-5);
+  padding: var(--size-4);
   cursor: pointer;
 }
 
@@ -86,7 +86,7 @@ th {
 
 .actions {
   display: flex;
-  gap: var(--size-4);
+  gap: var(--size-3);
 }
 
 tr:last-child,
@@ -96,7 +96,7 @@ td:last-child {
 
 td,
 th {
-  padding: var(--size-4) var(--size-3);
+  padding: var(--size-3) var(--size-3);
   box-sizing: border-box;
 }
 

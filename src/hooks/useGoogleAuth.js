@@ -1,29 +1,24 @@
+import axios from "axios";
 import { useState } from "react";
-import useAxios from "./useAxios";
 
 const useGoogleAuth = () => {
   const [emailUser, setEmailUser] = useState(null);
-  const { postData, fetchData } = useAxios();
 
   const getRefreshToken = async (codeResponse) => {
     try {
-      let payload = {
-        grant_type: "authorization_code",
-        code: codeResponse.code,
-        client_id: "64320919863-41lrv84v3mth32m8injfd9macgbdjah1.apps.googleusercontent.com",
-        client_secret: "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",
-        redirect_uri: "http://localhost:3000/oauth2",
+      const payload = {
+       
       };
 
       const url = "https://oauth2.googleapis.com/token";
 
-      const data = await postData(url, payload, {
+      const response = await axios.post(url, payload, {
         headers: {
           "Content-Type": "application/json",
         },
       });
 
-      setEmailUser(data);
+      setEmailUser(response.data);
     } catch (error) {
       console.log("Error getting refresh token:", error);
     }
@@ -31,26 +26,18 @@ const useGoogleAuth = () => {
 
   const getNewAccessToken = async () => {
     try {
-      let payloadForAccessToken = {
-        grant_type: "refresh_token",
-        refresh_token: emailUser?.refresh_token,
-        client_id: "64320919863-41lrv84v3mth32m8injfd9macgbdjah1.apps.googleusercontent.com",
-        client_secret: "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",
-      };
+      const payloadForAccessToken = {
+       
 
-      const url = "https://oauth2.googleapis.com/token"
+      const url = "https://oauth2.googleapis.com/token";
 
-      const data = await postData(
-        url,
-        payloadForAccessToken,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await axios.post(url, payloadForAccessToken, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-      console.log("New token response:", data);
+      console.log("New token response:", response.data);
     } catch (error) {
       console.log("Error getting new access token:", error);
     }

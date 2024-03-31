@@ -2,7 +2,6 @@ import React from "react";
 import useButtons from "../../hooks/useButtons";
 import useContextHook from "../../hooks/useContextHook";
 import useCreateNewPost from "../../hooks/useCreateNewPost";
-import SelectSocialMedia from "../ui/SelectSocialMedia";
 import CreateNewPostModal from "./CreateNewPostModal";
 
 function CreateNewPostHeader() {
@@ -12,11 +11,8 @@ function CreateNewPostHeader() {
 
   return (
     <header>
-      <SelectSocialMedia />
-      <PrimaryButton
-        onClick={openModal}
-        text="Create New Post"
-      />
+      <h3>Uploaded videos</h3>
+      <PrimaryButton onClick={openModal} text="Create New Post" />
       <CreateNewPostModal />
     </header>
   );

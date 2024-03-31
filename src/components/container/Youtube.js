@@ -1,10 +1,12 @@
-import React from 'react';
-import ListSocialMediaPosts from '../container/ListSocialMediaPosts';
-import LayoutTitle from '../ui/LayoutTitle';
+import React from "react";
+import useYoutubeVideos from "../../hooks/useYoutubeVideos";
+import LayoutTitle from "./../ui/LayoutTitle";
+import ListSocialMediaPosts from "./ListSocialMediaPosts";
 
 const items = [
   {
-    title: "Aku bertemu doppelager langka yang mengerikan that's not my neighbor",
+    title:
+      "Aku bertemu doppelager langka yang mengerikan that's not my neighbor",
     reactions: 0,
     comments: 0,
     shared: 0,
@@ -29,12 +31,13 @@ const items = [
   },
 ];
 
-
 function Youtube() {
+  useYoutubeVideos();
+
   return (
     <>
       <LayoutTitle title="Youtube Posts" />
-      <ListSocialMediaPosts items={items}/>
+      <ListSocialMediaPosts items={items} />
     </>
   );
 }

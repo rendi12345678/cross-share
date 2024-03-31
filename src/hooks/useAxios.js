@@ -1,9 +1,9 @@
 import axios from "axios";
 
 function useAxios() {
-  const postData = async (url, data, options) => {
+  const postData = async (url, payload, options) => {
     try {
-      const response = await axios.post(url, data, options);
+      const response = await axios.post(url, payload, options);
       return response.data;
     } catch (err) {
       throw err;

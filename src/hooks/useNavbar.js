@@ -1,5 +1,5 @@
 import React from "react";
-import NavListItem from "../components/ui/NavListItem";
+import NavListItem from "./../components/ui/NavListItem";
 import useContextHook from "./useContextHook";
 
 function useNavbar() {
@@ -17,9 +17,6 @@ function useNavbar() {
     },
     {
       navListItem: "youtube",
-    },
-    {
-      navListItem: "x",
     },
     {
       navListItem: "settings",

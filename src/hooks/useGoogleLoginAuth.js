@@ -1,89 +1,60 @@
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
+import axios from "axios";
 import { useEffect, useState } from "react";
-import useAxios from "./useAxios";
-import useGoogleAuth from "./useGoogleAuth";
 
-function useGoogleLoginAuth() {
-  const initialUserProperties = {
-    access_token: "",
-    expires_in: 0,
-    id_token: "",
-    refresh_token: "",
-    scope: "",
-    token_type: "",
-  };
-
-  const emailUserProfile = {
-    email: "",
-    family_name: "",
-    given_name: "",
-    hd: "",
-    id: "",
-    locale: "",
-    name: "",
-    picture: "",
-    verified_email: false,
-  };
-
-  const { getNewAccessToken, getRefreshToken } = useGoogleAuth();
-  const { fetchData, postData } = useAxios();
-
-  const [emailUser, setEmailUser] = useState(initialUserProperties);
-  const [emailProfile, setEmailProfile] = useState(emailUserProfile);
+const GoogleAuthComponent = () => {
+  const [accessToken, setAccessToken] = useState(null);
+  const [refreshToken, setRefreshToken] = useState(null);
 
   const SCOPE = "https://mail.google.com/";
+
+  useEffect(() => {
+    console.log(`Access Token : ${accessToken}`);
+    console.log(`Refresh Token : ${refreshToken}`);
+  }, [accessToken, refreshToken]);
+
+  const onSuccess = async (response) => {
+    const codeResponse = response.code;
+    console.log(`Response :`, response.data);
+    try {
+      // Exchange authorization code for refresh token
+      const tokenResponse = await axios.post(
+        "https://oauth2.googleapis.com/token",
+        {
+          grant_type: "authorization_code",
+          code: codeResponse,
+          client_id:
+            "64320919863-41lrv84v3mth32m8injfd9macgbdjah1.apps.googleusercontent.com",
+          client_secret: "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",
+          redirect_uri: "http://localhost:3000/oauth",
+        }
+      );
+
+      setAccessToken(tokenResponse.data.access_token);
+      setRefreshToken(tokenResponse.data.refresh_token);
+    } catch (error) {
+      console.error("Error exchanging code for token:", error);
+    }
+  };
+
+  const onError = (error) => {
+    console.log("Login Failed:", error);
+  };
 
   const googleLogin = useGoogleLogin({
     scope: SCOPE,
     flow: "auth-code",
-    onSuccess: async (codeResponse) => {
-      if (codeResponse.scope.includes("https://mail.google.com/")) {
-        await getRefreshToken(codeResponse, setEmailUser);
-
-        if (!!emailUser.refresh_token) {
-          setTimeout(async () => {
-            await getNewAccessToken(emailUser);
-          }, 10000);
-        }
-      } else {
-        console.log("Please give required permission to read emails!");
-      }
-    },
-    onError: (error) => {
-      console.log("Login Failed:", error);
-    },
+    onSuccess,
+    onError,
   });
-
-  useEffect(() => {
-    const fetchUserProfile = async () => {
-      if (!!emailUser.access_token) {
-        try {
-          const url = `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${emailUser.access_token}`;
-          const options = {
-            headers: {
-              Authorization: `Bearer ${emailUser.access_token}`,
-              Accept: "application/json",
-            },
-          };
-
-          const data = await fetchData(url, options);
-
-          setEmailProfile(data);
-        } catch (err) {
-          console.log("Error fetching user profile:", err);
-        }
-      }
-    };
-
-    fetchUserProfile();
-  }, [emailUser]);
 
   const logOut = () => {
     googleLogout();
-    setEmailUser(initialUserProperties);
+    setAccessToken(null);
+    setRefreshToken(null);
   };
 
   return { logOut, googleLogin };
-}
+};
 
-export default useGoogleLoginAuth;
+export default GoogleAuthComponent;

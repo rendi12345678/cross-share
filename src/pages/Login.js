@@ -2,16 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../assets/styles/user-authentication.css";
 import Button from "../components/ui/Button";
+import Form from "../components/ui/Form";
 import Input from "../components/ui/Input";
 import Line from "../components/ui/Line";
 import useButtons from "../hooks/useButtons";
-import useGoogleLoginAuth from "../hooks/useGoogleLoginAuth";
-import Form from "./../components/ui/Form";
+import useGoogleLoginAuth from "./../hooks/useGoogleLoginAuth";
 
 function Login() {
   const { PrimaryButton } = useButtons();
-  const {logOut, googleLogin} = useGoogleLoginAuth();
-  
+  const { logOut, googleLogin } = useGoogleLoginAuth();
+
   return (
     <div className="authentication-container">
       <div className="wrapper">
@@ -25,7 +25,7 @@ function Login() {
           />
           <PrimaryButton text="Sign in with Cross Share" size="medium-btn" />
         </Form>
-        <Line/>
+        <Line />
         <Button
           onClick={() => googleLogin()}
           bgColor="white"

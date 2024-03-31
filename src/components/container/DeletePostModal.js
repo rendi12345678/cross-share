@@ -1,7 +1,7 @@
 import React from "react";
 import useContextHook from "../../hooks/useContextHook";
-import CancelAndDelete from "../ui/CancelAndDelete";
 import Modal from "../ui/Modal";
+import CancelAndDelete from "./../ui/CancelAndDelete";
 
 function DeletePostModal() {
   const { isOpenModal } = useContextHook();

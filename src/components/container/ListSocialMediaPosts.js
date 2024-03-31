@@ -1,7 +1,7 @@
 import React from "react";
 import Item from "../ui/Item";
 
-function ListSocialMediaPosts({items}) {
+function ListSocialMediaPosts({ items }) {
   return (
     <ul className="list-social-media-posts">
       {items.map(({ title, reactions, comments, shared }, index) => (

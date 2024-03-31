@@ -5,7 +5,7 @@
   top: 0;
   bottom: 0;
   grid-template-rows: auto auto 1fr;
-  padding: var(--size-2) var(--size-3);
+  padding: var(--size-3) var(--size-3);
   border-right: 0.1rem solid var(--border-color);
   width: auto;
   overflow: hidden;
@@ -20,7 +20,7 @@
 }
 
 .side-bar-nav .nav-title {
-  padding: 0 var(--size-4);
+  padding: 0 var(--size-3);
 }
 
 .side-bar-nav nav {
@@ -28,12 +28,12 @@
 }
 
 .side-bar-nav button {
-  padding: var(--size-4);
+  padding: var(--size-3);
   display: block;
   color: var(--body-color) !important;
   border-radius: 1.5rem;
   width: 100%;
-  margin-bottom: var(--size-4);
+  margin-bottom: var(--size-3);
   transition: 500ms;
 }
 

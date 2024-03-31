@@ -6,19 +6,14 @@ function DateAndTime() {
   const { uploadScheduleRef, accessTokenRef } = useContextHook();
 
   return (
-    <div className="date-and-access-token">
+    <div className="date-and-time">
       <Input
         type="date"
         name="date"
         label="Upload Schedule"
         ref={uploadScheduleRef}
       />
-      <Input
-        type="date-time"
-        name="time"
-        label="Time"
-        ref={accessTokenRef}
-      />
+      <Input type="time" name="time" label="Time" ref={accessTokenRef} />
     </div>
   );
 }
